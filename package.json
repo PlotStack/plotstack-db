@@ -6,6 +6,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
+    "prepare": "tsup src/index.ts --format esm --dts",
     "build": "tsup src/index.ts --format esm --dts",
     "dev": "tsup src/index.ts --format esm --dts --watch",
     "migrate": "node-pg-migrate up --migration-file-language sql --migrations-dir src/migrations",
@@ -18,12 +19,12 @@
   "dependencies": {
     "pg": "^8.13.0",
     "node-pg-migrate": "^7.0.0",
-    "dotenv": "^16.4.0"
+    "dotenv": "^16.4.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.7.0"
   },
   "devDependencies": {
-    "tsup": "^8.3.0",
     "tsx": "^4.19.0",
-    "typescript": "^5.7.0",
     "vitest": "^3.0.0",
     "@types/pg": "^8.11.0",
     "eslint": "^9.0.0"
